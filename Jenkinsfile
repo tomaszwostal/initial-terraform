@@ -30,17 +30,5 @@ pipeline
             }
         }
 
-    post
-    {
-        always
-        {
-            // make sure that the Docker image is removed
-            sh "docker rmi $IMAGE | true"
-	    //emailext body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
-
-		//Check console output at $BUILD_URL to view the results.''', recipientProviders: [[$class: 'RequesterRecipientProvider'], [$class: 'UpstreamComitterRecipientProvider']], replyTo: 'cloud@slabs.pl', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: '$DEFAULT_RECIPIENTS '
-
-        }
-    }
-}
-}
+   }
+   }
